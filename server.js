@@ -33,7 +33,7 @@ server.use(bodyParser.urlencoded({extended:true}));
 
 
 server.get('/', function(req, res){
-  res.send('public/html/index.html', {root: __dirname});
+  res.sendFile('public/html/index.html', {root: __dirname});
 });
 
 server.get('/api/todos', function(req, res){
@@ -76,7 +76,7 @@ server.put('/api/todos/:id', function(req, res){
 server.delete('/api/todos/:id', function(req, res){
   Todo.findOneAndRemove({_id: req.params.id}, function(err, todo){
     if(err) throw err;
-    
+
     res.json(todo);
   });
 });

@@ -14,7 +14,7 @@ function TodoController($scope, $http){
   initTodos();
 
 
-  // Create a new todo
+  // Create(post) a new todo
   $scope.saveTodo = function(){
     $http.post('/api/todos', $scope.newTodo)
       .then(function(response){
@@ -25,6 +25,8 @@ function TodoController($scope, $http){
         console.err(err);
       });
     }
+
+  // Delete todo
   $scope.deleteTodo = function(todo){
     var id = todo._id;
     $http.delete('/api/todos/'+id)
@@ -35,6 +37,8 @@ function TodoController($scope, $http){
         console.err(err);
       });
   }
+
+  // Edit/Update(put) todo
   $scope.editTodo = function(todo){
     $scope.isEditing = !$scope.isEditing;
     $scope.editingTodo = todo;
@@ -55,7 +59,7 @@ function TodoController($scope, $http){
         console.log(response);
         $scope.todos = response.data;
       })
-      .catch(function)(err){
+      .catch(function(err){
         console.err(err);
       });
   }
