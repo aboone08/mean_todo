@@ -1,3 +1,26 @@
-well {
+body {
+  background-image: url(https://pixabay.com/static/uploads/photo/2015/04/18/20/57/quotes-729173_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input[type=text]:focus {
+  border-color: #A63A79;
+}
+
+.well {
   list-style: none;
+  background-color: #A63A79;
+  border-style: ridge;
+  border-radius: 1em;
+  border-width: thick;
+  border-color: #DFCFBE;
+  padding: 15px;
+  text-align: center;
+}
+
+.page-header {
+  background-color: #95E0E8;
+  border-radius: 1em;
+  text-align: center;
 }

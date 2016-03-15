@@ -62,5 +62,12 @@ function TodoController($scope, $http){
       .catch(function(err){
         console.err(err);
       });
+
+  // Move up todo
+  $scope.moveUp = function(todo){
+    var index = $scope.todos.indexOf(todo);
+    $scope.todos.splice(index, 1);
+    $scope.todos.splice(index-1, 0, todo);
+  }
   }
 }
