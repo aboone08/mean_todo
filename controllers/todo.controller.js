@@ -44,7 +44,7 @@ function updateTodo(req, res){
   });
 }
 
-function deleteTodo(req. res){
+function deleteTodo(req, res){
   Todo.findOneAndRemove({_id: req.params.id}, function(err, todo){
     if(err) throw err;
 

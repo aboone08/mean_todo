@@ -6,7 +6,7 @@ var express = require('express'),
     Schema = mongoose.Schema,
     bodyParser = require('body-parser'),
     server  = express(),
-    Todo = require('./models/todo.model,js'),
+    Todo = require('./models/todo.model.js'),
     TodoCtrl = require('./controllers/todo.controller.js');
 
 // create a connection to db
